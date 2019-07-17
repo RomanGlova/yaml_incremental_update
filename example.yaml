@@ -12,15 +12,15 @@ global:
 advisorUi:
   replicaCount: 3
   image:
-    dockerTag: v2.13.32
+    dockerTag: v2.13.33
 advisorsApi:
   replicaCount: 3
   image:
-    dockerTag: v4.27.31
+    dockerTag: v4.27.32
 adminApi:
   replicaCount: 3
   image:
-    dockerTag: v1.31.31
+    dockerTag: v1.31.32
 ordersService:
   replicaCount: 3
   image:
@@ -28,4 +28,4 @@ ordersService:
 permissionsService:
   replicaCount: 3
   image:
-    dockerTag: v1.26.34
+    dockerTag: v1.26.35

@@ -30,7 +30,7 @@ def load_yaml(file_path):
     return yaml_obj
 
 
-def yaml_version_incremental_update(v, incremental):
+def version_increment(v, incremental):
     """Return a value of incremented version, if version is non-semantic print warning message"""
     try:
         ver = semantic_version.Version((v[1:] if v.startswith('v') else v))
@@ -52,7 +52,7 @@ def find_versions(obj, key, incremental):
         if isinstance(v, dict):
             obj[k] = find_versions(v, key, incremental)
     if key in obj:
-        obj[key] = yaml_version_incremental_update(v, incremental)
+        obj[key] = version_increment(v, incremental)
         if obj[key] != v:
             print('INFO: Found', key, 'key, incrementing version:', v, '=>', obj[key])
     return obj
